@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  app_popup_menu: ^1.0.0
   http: ^0.13.4
   provider: ^6.0.2
   flutter:
@@ -76,12 +77,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+#  fonts:
+#     - family: Shizuru
+#       fonts:
+#         - asset: Fonts/Shizuru-Regular.ttf
+#         - asset: fonts/Schyler-Italic.ttf
+#           style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

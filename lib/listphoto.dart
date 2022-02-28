@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:facebook/listphoto.dart';
 
-class ListPhoto extends StatelessWidget {
+class ListPhoto extends StatefulWidget {
   const ListPhoto({Key? key}) : super(key: key);
 
+  @override
+  _ListPhotoState createState() => _ListPhotoState();
+}
+
+class _ListPhotoState extends State<ListPhoto> {
   @override
   Widget build(BuildContext context) {
     List data = [
@@ -13,6 +18,8 @@ class ListPhoto extends StatelessWidget {
       {'name': 'Jerry Luis', 'image': 'Assets/images/girl.jpeg'},
       {'name': 'Jerry Luis', 'image': 'Assets/images/girl.jpeg'},
     ];
+
+    List<String> drop = ['Update', 'Delete'];
 
     return Column(
       children: data
@@ -46,7 +53,20 @@ class ListPhoto extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Icon(Icons.more_horiz)
+                              DropdownButton(elevation: 0,underline:Container() ,
+                                icon: const Icon(Icons.more_horiz),
+                                items: drop.map((String items) {
+                                  return DropdownMenuItem(
+                                    value: "Select",
+                                    child: Text(items),
+                                  );
+                                }).toList(),
+                                onChanged: (String? dropvalue) {
+                                  setState(() {
+                                    drop = item;
+                                  });
+                                },
+                              ),
                             ],
                           ),
                           Expanded(

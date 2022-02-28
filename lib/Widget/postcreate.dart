@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:facebook/postadd.dart';
 
 class PostCreate extends StatelessWidget {
   const PostCreate({Key? key}) : super(key: key);
@@ -43,23 +44,20 @@ class PostCreate extends StatelessWidget {
                     radius: 20,
                     backgroundImage: AssetImage('Assets/images/girl.jpeg')),
               ),
-              SizedBox(
-                width: 9,
+              const SizedBox(
+                width: 19,
               ),
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    // used to disable the line coming through the text field
-                    border: InputBorder.none,
-                    // Used for the same like above used
-                    label: Text(
-                      "What's on your mind?",
-                      style:
-                          TextStyle(fontSize: 21, fontWeight: FontWeight.w300),
-                    ),
-                  ),
-                ),
-              ),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PostAdd()),
+                    );
+                  },
+                  child: Text(
+                    "What's on your mind?",
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w300),
+                  )),
             ],
           ),
         ],
