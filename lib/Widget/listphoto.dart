@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:facebook/listphoto.dart';
+import 'package:facebook/Widget/listphoto.dart';
+import 'package:facebook/Widget/update_post.dart';
 
 class ListPhoto extends StatefulWidget {
   const ListPhoto({Key? key}) : super(key: key);
@@ -53,19 +54,34 @@ class _ListPhotoState extends State<ListPhoto> {
                                   ),
                                 ],
                               ),
-                              DropdownButton(elevation: 0,underline:Container() ,
-                                icon: const Icon(Icons.more_horiz),
-                                items: drop.map((String items) {
-                                  return DropdownMenuItem(
-                                    value: "Select",
-                                    child: Text(items),
-                                  );
-                                }).toList(),
-                                onChanged: (String? dropvalue) {
-                                  setState(() {
-                                    drop = item;
-                                  });
-                                },
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                child: DropdownButton(
+                                  elevation: 0,
+                                  underline: Container(),
+                                  alignment: Alignment.topRight,
+                                  icon: const Icon(Icons.more_horiz),
+                                  items: drop.map((String items) {
+                                    return DropdownMenuItem(
+                                      value: items,
+                                      child: Text(items),
+                                    );
+                                  }).toList(),
+                                  onChanged: (String? dropvalue) {
+                                    setState(() {
+                                      if (dropvalue == "Update") {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    Update_Post()));
+                                      } else if (dropvalue == "Delete") {
+                                      } else {
+                                      }
+                                      ;
+                                    });
+                                  },
+                                ),
                               ),
                             ],
                           ),

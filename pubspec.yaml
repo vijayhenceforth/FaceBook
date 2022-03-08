@@ -27,11 +27,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  f_datetimerangepicker: ^0.1.4
   app_popup_menu: ^1.0.0
   http: ^0.13.4
   provider: ^6.0.2
   flutter:
     sdk: flutter
+  datepicker_dropdown: ^0.0.2+2
 
 
   # The following adds the Cupertino Icons font to your application.

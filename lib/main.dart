@@ -1,12 +1,13 @@
-import 'package:facebook/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:facebook/Widget/postcreate.dart';
-import 'package:facebook/listphoto.dart';
+import 'package:facebook/Widget/listphoto.dart';
+import 'package:facebook/Widget/profile.dart';
+import 'package:facebook/Widget/update_post.dart';
+import 'package:facebook/Widget/postadd.dart';
 
 void main() {
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -43,15 +44,15 @@ class MyList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const Profile(),
-        const SizedBox(
+         Profile(),
+         SizedBox(
           height: 10,
         ),
-        const PostCreate(),
+         PostCreate(),
         SizedBox(
           height: 10,
         ),
-        const ListPhoto(),
+         ListPhoto(),
       ],
     );
   }

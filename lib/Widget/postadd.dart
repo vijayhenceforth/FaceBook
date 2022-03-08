@@ -14,6 +14,7 @@ class PostAdd extends StatefulWidget {
 }
 
 class _PostAddState extends State<PostAdd> {
+  bool isEnable=false;
   TextEditingController textctrl = TextEditingController();
 
   @override
@@ -53,7 +54,7 @@ class _PostAddState extends State<PostAdd> {
                         onPressed: () {},
                         child: Text(
                           "Post",
-                          style: TextStyle(color: Colors.black, fontSize: 18),
+                          style: TextStyle(color: isEnable ?  Colors.blue: Colors.black26, fontSize: 18),
                         ))
                   ],
                 ),
@@ -94,6 +95,22 @@ class _PostAddState extends State<PostAdd> {
                         cursorHeight: 25,
                         cursorWidth: 2,
                         controller: textctrl,
+                        onChanged: (r)
+                        {
+                          if(textctrl.text.isEmpty)
+                          {
+                            setState(() {
+                              isEnable=false;
+                            });
+
+                          }
+                          else
+                          {
+                            setState(() {
+                              isEnable=true;
+                            });
+                          }
+                        },
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           focusedBorder: InputBorder.none,
